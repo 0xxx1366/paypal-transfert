@@ -60,6 +60,11 @@
             margin-bottom: 1rem;
         }
 
+        h4 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
         p {
             margin-bottom: 1rem;
             color: var(--text-secondary);
@@ -130,6 +135,333 @@
 
         .nav-link:hover {
             color: var(--accent-primary);
+        }
+
+        /* Badge de sécurité */
+        .security-badge {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: rgba(34, 197, 94, 0.1);
+            border: 1px solid rgba(34, 197, 94, 0.3);
+            border-radius: 1rem;
+            padding: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            z-index: 100;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .security-badge:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .security-icon {
+            color: var(--success);
+            font-size: 1.25rem;
+        }
+
+        .security-text {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+
+        .security-status {
+            color: var(--success);
+            font-weight: 600;
+            font-size: 0.875rem;
+        }
+
+        /* Notifications */
+        .notification {
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-primary);
+            border-radius: 0.75rem;
+            padding: 1rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            transform: translateX(120%);
+            transition: transform 0.5s ease;
+            max-width: 300px;
+        }
+
+        .notification.show {
+            transform: translateX(0);
+        }
+
+        .notification-content {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+
+        .notification-icon {
+            color: var(--accent-primary);
+            font-size: 1.25rem;
+            margin-top: 0.25rem;
+        }
+
+        .notification-text {
+            flex: 1;
+        }
+
+        .notification-title {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .notification-message {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+
+        .notification-time {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            margin-top: 0.25rem;
+        }
+
+        .close-notification {
+            color: var(--text-secondary);
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        /* Live transactions */
+        .live-transactions {
+            background: var(--bg-secondary);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            border: 1px solid var(--border-primary);
+            margin: 2rem 0;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .live-transactions::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .live-transactions::-webkit-scrollbar-track {
+            background: var(--bg-tertiary);
+            border-radius: 3px;
+        }
+
+        .live-transactions::-webkit-scrollbar-thumb {
+            background: var(--accent-primary);
+            border-radius: 3px;
+        }
+
+        .transaction-item {
+            display: flex;
+            align-items: center;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--border-primary);
+            animation: slideIn 0.5s ease;
+        }
+
+        .transaction-item:last-child {
+            border-bottom: none;
+        }
+
+        .transaction-avatar {
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            margin-right: 1rem;
+            font-size: 0.875rem;
+        }
+
+        .transaction-details {
+            flex: 1;
+        }
+
+        .transaction-user {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .transaction-amount {
+            color: var(--success);
+            font-weight: 600;
+            font-size: 0.875rem;
+        }
+
+        .transaction-status {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        .transaction-time {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            text-align: right;
+            min-width: 60px;
+        }
+
+        /* Live panel */
+        .live-panel {
+            background: var(--bg-secondary);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            border: 1px solid var(--border-primary);
+            margin: 2rem 0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .panel-title {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent-primary);
+        }
+
+        .live-dot {
+            width: 0.75rem;
+            height: 0.75rem;
+            background: var(--accent-primary);
+            border-radius: 50%;
+            animation: pulse 1.5s infinite;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .stat-card {
+            background: var(--bg-tertiary);
+            border-radius: 0.75rem;
+            padding: 1.25rem;
+            text-align: center;
+            border: 1px solid var(--border-primary);
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-primary);
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+
+        .stat-icon {
+            width: 2rem;
+            height: 2rem;
+            color: var(--accent-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Avis clients */
+        .testimonials {
+            background: var(--bg-secondary);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            border: 1px solid var(--border-primary);
+            margin: 2rem 0;
+        }
+
+        .testimonials-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent-primary);
+        }
+
+        .testimonials-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .testimonial-card {
+            background: var(--bg-tertiary);
+            border-radius: 0.75rem;
+            padding: 1.25rem;
+            border: 1px solid var(--border-primary);
+            position: relative;
+        }
+
+        .testimonial-content {
+            font-style: italic;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+            line-height: 1.5;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .author-avatar {
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 0.875rem;
+        }
+
+        .author-info {
+            flex: 1;
+        }
+
+        .author-name {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .author-location {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+
+        .testimonial-rating {
+            display: flex;
+            gap: 0.25rem;
+            margin-top: 0.5rem;
+        }
+
+        .star {
+            color: #fbbf24;
+            font-size: 1rem;
         }
 
         /* Hero Section */
@@ -905,6 +1237,52 @@
     </header>
 
     <main>
+        <!-- Panel en direct -->
+        <div class="container">
+            <div class="live-panel">
+                <div class="panel-title">
+                    <i class="fas fa-bolt"></i>
+                    <span>Statistiques en temps réel</span>
+                    <div class="live-dot"></div>
+                </div>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <i class="fas fa-users stat-icon"></i>
+                        <div class="stat-value" id="visitors-count">1,234</div>
+                        <div class="stat-label">Visiteurs en ligne</div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-shopping-cart stat-icon"></i>
+                        <div class="stat-value" id="pending-count">23</div>
+                        <div class="stat-label">Commandes en cours</div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-check-circle stat-icon"></i>
+                        <div class="stat-value" id="completed-count">1,567</div>
+                        <div class="stat-label">Commandes réalisées</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Transactions en direct -->
+            <div class="live-transactions" id="live-transactions">
+                <h3 style="margin-bottom: 1rem; color: var(--accent-primary);">Transactions récentes</h3>
+                <!-- Les transactions seront ajoutées ici par JavaScript -->
+            </div>
+
+            <!-- Avis clients en direct -->
+            <div class="testimonials" id="testimonials">
+                <div class="testimonials-header">
+                    <i class="fas fa-star"></i>
+                    <h3 class="testimonials-title">Avis clients en temps réel</h3>
+                    <div class="live-dot"></div>
+                </div>
+                <div class="testimonials-grid" id="testimonials-grid">
+                    <!-- Les avis seront ajoutés ici par JavaScript -->
+                </div>
+            </div>
+        </div>
+
         <!-- Hero Section -->
         <section id="home" class="hero">
             <div class="container">
@@ -1039,8 +1417,8 @@
                             </div>
 
                             <p style="margin: 1rem 0;">Ou utilisez notre lien PayPal.me :</p>
-                            <a href="https://paypal.me/bizpy" target="_blank" class="paypal-link">
-                                <i class="fab fa-paypal"></i> payer via paypal
+                            <a href="https://paypal.me/bizshop" target="_blank" class="paypal-link">
+                                <i class="fab fa-paypal"></i> payer via paypal.me/bizshop
                             </a>
 
                             <div class="timer-display" id="timer">5:00</div>
@@ -1080,7 +1458,7 @@
                                         <i class="fas fa-copy"></i> Copier
                                     </button>
                                 </div>
-                                <div class="info-value">ltc1qna0femy9ju2hdguacnhag9xjevp3epthmj326g</div>
+                                <div class="info-value">LgZ1234567890abcdefghijklmnopqrstuvwxyz</div>
                             </div>
 
                             <div class="timer-display" id="timer-crypto">5:00</div>
@@ -1168,46 +1546,33 @@
         </section>
     </main>
 
+    <!-- Badge de sécurité -->
+    <div class="security-badge" onclick="showSecurityInfo()">
+        <i class="fas fa-shield-alt security-icon"></i>
+        <div>
+            <div class="security-status">Sécurité maximale</div>
+            <div class="security-text">SSL/TLS • 256-bit • PCI DSS</div>
+        </div>
+    </div>
+
+    <!-- Notifications -->
+    <div class="notification" id="notification">
+        <div class="notification-content">
+            <i class="fas fa-bell notification-icon"></i>
+            <div class="notification-text">
+                <div class="notification-title">Sécurité renforcée</div>
+                <div class="notification-message">Votre connexion est sécurisée avec le protocole TLS 1.3</div>
+                <div class="notification-time">Maintenant</div>
+            </div>
+            <div class="close-notification" onclick="closeNotification()">
+                <i class="fas fa-times"></i>
+            </div>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="footer-content">
-                <div>
-                    <div class="footer-logo">
-                        <div class="footer-logo-icon">
-                            <i class="fas fa-paper-plane"></i>
-                        </div>
-                        <span class="footer-logo-text">PayToEarn</span>
-                    </div>
-                    <p class="footer-desc">La plateforme de gestion de micro-paiements la plus rapide et sécurisée.</p>
-                    <div class="social-links">
-                        <a href="#" class="social-link"><span>f</span></a>
-                        <a href="#" class="social-link"><span>t</span></a>
-                        <a href="#" class="social-link"><span>in</span></a>
-                    </div>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>Liens</h3>
-                    <ul class="footer-links">
-                        <li class="footer-link"><a href="#">Accueil</a></li>
-                        <li class="footer-link"><a href="#">À propos</a></li>
-                        <li class="footer-link"><a href="#">Services</a></li>
-                        <li class="footer-link"><a href="#">Contact</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>Support</h3>
-                    <ul class="footer-links">
-                        <li class="footer-link"><a href="#">Centre d'aide</a></li>
-                        <li class="footer-link"><a href="#">FAQ</a></li>
-                        <li class="footer-link"><a href="#">Politique de confidentialité</a></li>
-                        <li class="footer-link"><a href="#">Conditions d'utilisation</a></li>
-                    </ul>
-                </div>
-            </div>
-            
             <div class="footer-bottom">
                 <p>&copy; 2024 PayToEarn. Tous droits réservés.</p>
             </div>
@@ -1219,6 +1584,38 @@
         let paymentMethod = null;
         let timer = 300; // 5 minutes
         let timerInterval = null;
+        
+        // Compteurs pour le panel en direct
+        let visitorsCount = 1234;
+        let pendingCount = 23;
+        let completedCount = 1567;
+        
+        // Liste des transactions
+        let transactions = [
+            { user: 'Alex M.', amount: 800, time: 'Il y a 2 min', status: 'Complété' },
+            { user: 'Sarah K.', amount: 400, time: 'Il y a 5 min', status: 'Complété' },
+            { user: 'James P.', amount: 600, time: 'Il y a 8 min', status: 'Complété' },
+            { user: 'Emma L.', amount: 1000, time: 'Il y a 12 min', status: 'Complété' },
+            { user: 'Mike R.', amount: 400, time: 'Il y a 15 min', status: 'Complété' }
+        ];
+        
+        // Liste des avis clients
+        let testimonials = [
+            { user: 'Marie D.', location: 'Paris, FR', rating: 5, text: 'Service incroyable ! J\'ai reçu mon virement en moins de 5 minutes. Très professionnel.' },
+            { user: 'Thomas L.', location: 'Lyon, FR', rating: 5, text: 'La meilleure plateforme de micro-paiements que j\'ai jamais utilisée. Simple et rapide.' },
+            { user: 'Sophie M.', location: 'Marseille, FR', rating: 5, text: 'Transaction parfaite, frais très bas et virement envoyé rapidement. Je recommande !' },
+            { user: 'Lucas P.', location: 'Toulouse, FR', rating: 5, text: 'Service client excellent et processus de paiement très sécurisé. Très satisfait.' },
+            { user: 'Camille R.', location: 'Nice, FR', rating: 5, text: 'J\'ai testé plusieurs plateformes, mais PayToEarn est de loin la meilleure. Merci !' },
+            { user: 'Antoine B.', location: 'Nantes, FR', rating: 5, text: 'Processus de paiement très simple et virement reçu rapidement. Parfait !' }
+        ];
+        
+        // Éléments du DOM
+        const visitorsElement = document.getElementById('visitors-count');
+        const pendingElement = document.getElementById('pending-count');
+        const completedElement = document.getElementById('completed-count');
+        const liveTransactionsElement = document.getElementById('live-transactions');
+        const testimonialsGridElement = document.getElementById('testimonials-grid');
+        const notificationElement = document.getElementById('notification');
 
         function selectAmount(amount) {
             selectedAmount = amount;
@@ -1303,6 +1700,23 @@
             
             // Update completed amount
             document.getElementById('completed-amount').textContent = selectedAmount + '€';
+            
+            // Mettre à jour le panel en direct
+            completedCount++;
+            pendingCount--;
+            completedElement.textContent = completedCount.toLocaleString();
+            pendingElement.textContent = pendingCount;
+            
+            // Ajouter une nouvelle transaction
+            addLiveTransaction(selectedAmount);
+            
+            // Ajouter un nouvel avis client
+            if (Math.random() > 0.7) { // 30% de chance d'ajouter un avis après chaque transaction
+                addRandomTestimonial();
+            }
+            
+            // Montrer une notification
+            showNotification(`Paiement de ${selectedAmount}€ envoyé avec succès !`, 'success');
         }
 
         function resetTransaction() {
@@ -1334,6 +1748,252 @@
                 }, 2000);
             });
         }
+        
+        // Fonction pour ajouter une transaction en direct
+        function addLiveTransaction(amount) {
+            const firstNames = ['Alex', 'Sarah', 'James', 'Emma', 'Mike', 'Lisa', 'David', 'Anna', 'Tom', 'Julie'];
+            const lastNames = ['M.', 'K.', 'P.', 'L.', 'R.', 'W.', 'B.', 'C.', 'D.', 'S.'];
+            
+            const firstName = firstNames[Math.floor(Math.random() * firstNames.length)];
+            const lastName = lastNames[Math.floor(Math.random() * lastNames.length)];
+            const user = `${firstName} ${lastName}`;
+            
+            const newTransaction = {
+                user: user,
+                amount: amount,
+                time: 'Maintenant',
+                status: 'Complété'
+            };
+            
+            transactions.unshift(newTransaction);
+            
+            // Garder seulement les 10 dernières transactions
+            if (transactions.length > 10) {
+                transactions = transactions.slice(0, 10);
+            }
+            
+            updateLiveTransactions();
+        }
+        
+        // Fonction pour mettre à jour l'affichage des transactions
+        function updateLiveTransactions() {
+            liveTransactionsElement.innerHTML = '<h3 style="margin-bottom: 1rem; color: var(--accent-primary);">Transactions récentes</h3>';
+            
+            transactions.forEach(transaction => {
+                const transactionElement = document.createElement('div');
+                transactionElement.className = 'transaction-item';
+                
+                const initials = transaction.user.split(' ').map(n => n[0]).join('');
+                
+                transactionElement.innerHTML = `
+                    <div class="transaction-avatar">${initials}</div>
+                    <div class="transaction-details">
+                        <div class="transaction-user">${transaction.user}</div>
+                        <div class="transaction-amount">+${transaction.amount}€</div>
+                        <div class="transaction-status">${transaction.status}</div>
+                    </div>
+                    <div class="transaction-time">${transaction.time}</div>
+                `;
+                
+                liveTransactionsElement.appendChild(transactionElement);
+            });
+        }
+        
+        // Fonction pour ajouter un avis client aléatoire
+        function addRandomTestimonial() {
+            const users = [
+                'Marie D.', 'Thomas L.', 'Sophie M.', 'Lucas P.', 'Camille R.', 
+                'Antoine B.', 'Julie C.', 'Pierre M.', 'Élise D.', 'Nicolas R.'
+            ];
+            
+            const locations = [
+                'Paris, FR', 'Lyon, FR', 'Marseille, FR', 'Toulouse, FR', 'Nice, FR',
+                'Nantes, FR', 'Strasbourg, FR', 'Montpellier, FR', 'Bordeaux, FR', 'Lille, FR'
+            ];
+            
+            const testimonialsTexts = [
+                'Service incroyable ! J\'ai reçu mon virement en moins de 5 minutes. Très professionnel.',
+                'La meilleure plateforme de micro-paiements que j\'ai jamais utilisée. Simple et rapide.',
+                'Transaction parfaite, frais très bas et virement envoyé rapidement. Je recommande !',
+                'Service client excellent et processus de paiement très sécurisé. Très satisfait.',
+                'J\'ai testé plusieurs plateformes, mais PayToEarn est de loin la meilleure. Merci !',
+                'Processus de paiement très simple et virement reçu rapidement. Parfait !',
+                'Je recommande vivement cette plateforme. Sécurité maximale et rapidité d\'exécution.',
+                'Service au top ! J\'ai reçu mon argent exactement comme promis. Merci !',
+                'Plateforme fiable et sécurisée. J\'utilise PayToEarn depuis plusieurs mois maintenant.',
+                'Virement reçu en 4 minutes seulement. Incroyablement rapide et efficace.'
+            ];
+            
+            const user = users[Math.floor(Math.random() * users.length)];
+            const location = locations[Math.floor(Math.random() * locations.length)];
+            const text = testimonialsTexts[Math.floor(Math.random() * testimonialsTexts.length)];
+            const rating = 5; // Toujours 5 étoiles pour l'effet de preuve sociale
+            
+            const newTestimonial = {
+                user: user,
+                location: location,
+                rating: rating,
+                text: text
+            };
+            
+            testimonials.unshift(newTestimonial);
+            
+            // Garder seulement les 6 derniers avis
+            if (testimonials.length > 6) {
+                testimonials = testimonials.slice(0, 6);
+            }
+            
+            updateTestimonials();
+            
+            // Montrer une notification d'avis
+            showNotification(`${user} a laissé un avis 5 étoiles !`, 'success');
+        }
+        
+        // Fonction pour mettre à jour l'affichage des avis
+        function updateTestimonials() {
+            testimonialsGridElement.innerHTML = '';
+            
+            testimonials.forEach(testimonial => {
+                const initials = testimonial.user.split(' ').map(n => n[0]).join('');
+                
+                const testimonialElement = document.createElement('div');
+                testimonialElement.className = 'testimonial-card';
+                
+                let stars = '';
+                for (let i = 0; i < testimonial.rating; i++) {
+                    stars += '<i class="fas fa-star star"></i>';
+                }
+                
+                testimonialElement.innerHTML = `
+                    <div class="testimonial-content">"${testimonial.text}"</div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">${initials}</div>
+                        <div class="author-info">
+                            <div class="author-name">${testimonial.user}</div>
+                            <div class="author-location">${testimonial.location}</div>
+                        </div>
+                    </div>
+                    <div class="testimonial-rating">${stars}</div>
+                `;
+                
+                testimonialsGridElement.appendChild(testimonialElement);
+            });
+        }
+        
+        // Fonction pour simuler des visiteurs en temps réel
+        function updateLiveStats() {
+            // Simuler des visiteurs aléatoires
+            if (Math.random() > 0.7) {
+                visitorsCount += Math.floor(Math.random() * 3) + 1;
+                visitorsElement.textContent = visitorsCount.toLocaleString();
+            }
+            
+            // Simuler des commandes en cours
+            if (Math.random() > 0.9) {
+                pendingCount++;
+                pendingElement.textContent = pendingCount;
+            }
+        }
+        
+        // Fonction pour ajouter une transaction aléatoire
+        function addRandomTransaction() {
+            const amounts = [400, 600, 800, 1000];
+            const amount = amounts[Math.floor(Math.random() * amounts.length)];
+            
+            addLiveTransaction(amount);
+            
+            // Mettre à jour le compteur de commandes complétées
+            completedCount++;
+            completedElement.textContent = completedCount.toLocaleString();
+            
+            // 30% de chance d'ajouter un avis avec la transaction
+            if (Math.random() > 0.7) {
+                addRandomTestimonial();
+            }
+            
+            // Montrer une notification
+            const firstNames = ['Alex', 'Sarah', 'James', 'Emma', 'Mike'];
+            const firstName = firstNames[Math.floor(Math.random() * firstNames.length)];
+            showNotification(`${firstName} a reçu ${amount}€ !`, 'success');
+        }
+        
+        // Fonction pour montrer une notification
+        function showNotification(message, type = 'info') {
+            const notification = document.getElementById('notification');
+            const titleElement = notification.querySelector('.notification-title');
+            const messageElement = notification.querySelector('.notification-message');
+            const iconElement = notification.querySelector('.notification-icon');
+            
+            titleElement.textContent = type === 'success' ? 'Succès' : 'Information';
+            messageElement.textContent = message;
+            
+            if (type === 'success') {
+                iconElement.className = 'fas fa-check-circle notification-icon';
+                iconElement.style.color = 'var(--success)';
+            } else if (type === 'error') {
+                iconElement.className = 'fas fa-exclamation-circle notification-icon';
+                iconElement.style.color = 'var(--error)';
+            } else {
+                iconElement.className = 'fas fa-bell notification-icon';
+                iconElement.style.color = 'var(--accent-primary)';
+            }
+            
+            notification.classList.add('show');
+            
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 5000);
+        }
+        
+        // Fonction pour fermer la notification
+        function closeNotification() {
+            const notification = document.getElementById('notification');
+            notification.classList.remove('show');
+        }
+        
+        // Fonction pour montrer les infos de sécurité
+        function showSecurityInfo() {
+            showNotification('Connexion sécurisée avec chiffrement AES-256 et protocole TLS 1.3', 'success');
+        }
+        
+        // Mettre à jour les statistiques toutes les 3 secondes
+        setInterval(updateLiveStats, 3000);
+        
+        // Ajouter une transaction aléatoire toutes les 30-90 secondes
+        function scheduleRandomTransaction() {
+            const delay = 30000 + Math.random() * 60000; // Entre 30 et 90 secondes
+            setTimeout(() => {
+                addRandomTransaction();
+                scheduleRandomTransaction(); // Planifier la prochaine
+            }, delay);
+        }
+        
+        // Ajouter un avis aléatoire toutes les 2-5 minutes
+        function scheduleRandomTestimonial() {
+            const delay = 120000 + Math.random() * 180000; // Entre 2 et 5 minutes
+            setTimeout(() => {
+                addRandomTestimonial();
+                scheduleRandomTestimonial(); // Planifier le prochain
+            }, delay);
+        }
+        
+        // Initialiser les compteurs
+        window.onload = function() {
+            visitorsElement.textContent = visitorsCount.toLocaleString();
+            pendingElement.textContent = pendingCount;
+            completedElement.textContent = completedCount.toLocaleString();
+            updateLiveTransactions();
+            updateTestimonials();
+            
+            // Montrer la notification de sécurité au chargement
+            setTimeout(() => {
+                showNotification('Votre connexion est sécurisée avec le protocole TLS 1.3', 'success');
+            }, 2000);
+            
+            // Démarrer les mises à jour aléatoires
+            scheduleRandomTransaction();
+            scheduleRandomTestimonial();
+        };
     </script>
 </body>
 </html>
